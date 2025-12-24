@@ -19,10 +19,10 @@ const product = new mongoose.Schema({
         required : true,
         enum : ['vegetables','fruits','dairy',]
     },
-    images : {
+    images : [{
         type: String ,
         // required: ture
-    },
+    }],
     stock : {
         type : Number ,
         required : true , 
@@ -51,4 +51,3 @@ const product = new mongoose.Schema({
 
 const Product = mongoose.model("product",product)
 export default Product ;
-

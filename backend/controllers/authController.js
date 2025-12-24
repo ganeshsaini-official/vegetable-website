@@ -58,7 +58,7 @@ const Profile = (req, res) => {
          userId: req.user.isExist
       })
    } catch (error) {
-
+res.status(400).json(error)
    }
 }
 export { userRegister, login, Profile };

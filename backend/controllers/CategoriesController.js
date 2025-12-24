@@ -1,4 +1,4 @@
-import Categories from "../modules/CategoriesModule";
+import Categories from "../modules/CategoriesModule.js";
 
 const CategoriesController = (req,res)=>{
     const CategoriesData = Categories.create(req.body)
