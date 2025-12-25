@@ -21,23 +21,20 @@ const createProduct = async (req, res) => {
       });
 
       images.push(result.secure_url);
-      
-      // local file delete
+
       fs.unlinkSync(file.path);
 
       console.log("images:",images);
       
     }
 
-    // 3. save product
+    //  save product
     const product = await Product.create({...req.body, images });
-
     res.status(201).json({
       success: true,
       message: "Product created successfully",
       product,
     });
-
   } catch (error) {
     console.error(error);
     res.status(500).json({
@@ -46,5 +43,15 @@ const createProduct = async (req, res) => {
     });
   }
 };
+ // 
+const getAllProdut = async(req,res)=>{
+try {
+    const getProduct = await Product.find({   })
+  console.log("response--->",getProduct)
+  res.status(200).send({message : "All product get successfuly--->", getProduct})
+}catch (error) {
+    console.log("Error--->>",error)
+  }
+}
 
-export default createProduct;
+export {createProduct , getAllProdut} ;

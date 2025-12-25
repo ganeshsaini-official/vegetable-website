@@ -1,7 +1,11 @@
+import HeroBanner from "../components/HeroBanner/HeroBanner"
+import Products from "./Products"
+
 const Home = () => {
     return (
         <>
-            <h1  >Home Page</h1>
+            <HeroBanner/>
+            <Products/>
         </>
     )
 }
